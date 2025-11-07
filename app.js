@@ -21,6 +21,7 @@ const express = require("express");
 const path = require("path");
 const wrap = require("express-async-error-wrapper");
 const cookieParser = require("cookie-parser"); // https://stackoverflow.com/a/16209531/3569421
+const sql = require("./data/sql");
 
 require("dotenv").config({ encoding: "utf8" });
 
