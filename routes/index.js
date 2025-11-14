@@ -5,17 +5,7 @@ const sql = require("../data/sql");
 const router = express.Router();
 
 router.get("/", wrap(async (req, res) => {
-	let lista;
-
-	await sql.connect(async sql => {
-		lista = sql.query("select id, titulo, tags, autor from post order by id desc limit 12");
-	});
-
-	let opcoes = {
-		posts: lista
-	};
-
-	res.render("index/index", opcoes);
+	res.render("index/index");
 }));
 
 router.get("/sobre", wrap(async (req, res) => {
@@ -26,33 +16,19 @@ router.get("/sobre", wrap(async (req, res) => {
 	res.render("index/sobre", opcoes);
 }));
 
-router.get("/produtos", wrap(async (req, res) => {
-	let produtoA = {
-		id: 1,
-		nome: "Produto A",
-		valor: 25
-	};
+router.get("/blog", wrap(async (req, res) => {
+	let lista;
 
-	let produtoB = {
-		id: 2,
-		nome: "Produto B",
-		valor: 15
-	};
-
-	let produtoC = {
-		id: 3,
-		nome: "Produto C",
-		valor: 100
-	};
-
-	let produtosVindosDoBanco = [ produtoA, produtoB, produtoC ];
+	await sql.connect(async sql => {
+		lista = await sql.query("select id, titulo, tags, autor, date_format(data, '%d/%m/%Y') data from post order by id desc limit 12");
+	});
 
 	let opcoes = {
-		titulo: "Listagem de Produtos",
-		produtos: produtosVindosDoBanco
+		titulo: "Blog",
+		posts: lista
 	};
 
-	res.render("index/produtos", opcoes);
+	res.render("index/blog", opcoes);
 }));
 
 module.exports = router;
