@@ -1,10 +1,21 @@
 const express = require("express");
 const wrap = require("express-async-error-wrapper");
+const sql = require("../data/sql");
 
 const router = express.Router();
 
 router.get("/", wrap(async (req, res) => {
-	res.render("index/index");
+	let lista;
+
+	await sql.connect(async sql => {
+		lista = sql.query("select id, titulo, tags, autor from post order by id desc limit 12");
+	});
+
+	let opcoes = {
+		posts: lista
+	};
+
+	res.render("index/index", opcoes);
 }));
 
 router.get("/sobre", wrap(async (req, res) => {
