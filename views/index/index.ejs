@@ -79,16 +79,13 @@
   <!-- BLOG -->
   <section id="blog">
     <h2>Nosso Blog 🌱</h2>
+	<% for (let i = 0; i < posts.length; i++) { %>
     <div class="post">
       <img src="https://source.unsplash.com/600x400/?solar,energy" alt="Post 1">
-      <h3>Energia solar: o futuro da sustentabilidade</h3>
-      <p>Descubra como os painéis solares estão revolucionando a forma como o mundo consome energia limpa.</p>
+      <h3><%= posts[i].titulo %></h3>
+      <p><%= posts[i].descricao %></p>
     </div>
-    <div class="post">
-      <img src="https://source.unsplash.com/600x400/?eco,city" alt="Post 2">
-      <h3>Cidades inteligentes e energia verde</h3>
-      <p>As metrópoles do futuro já estão surgindo — saiba como a tecnologia e o meio ambiente podem coexistir.</p>
-    </div>
+	<% } %>
   </section>
 
   <section id="servicos" class="servicos-section">
@@ -226,6 +223,52 @@ function fecharPopupSlide() {
     msg.className = "msg-envio";
 }
 
+async function cadastrarOrcamento() {
+	let nomeSlide = document.getElementById("nomeSlide");
+    let celularSlide = document.getElementById("celularSlide");
+
+	let nome = nomeSlide.value;
+    let celular = celularSlide.value;
+
+	if (!nome) {
+		alert("Nome inválido");
+		return;
+	}
+
+	if (!celular) {
+		alert("Celular inválido");
+		return;
+	}
+
+	let orcamento = {
+		nome: nome,
+		celular: celular
+	};
+
+	try {
+
+		let response = await fetch("/cadastrarOrcamento", {
+			method: "POST",
+			body: JSON.stringify(orcamento),
+			headers: {
+				"content-type": "application/json"
+			}
+		});
+
+		if (!response.ok) {
+			alert("Ocorreu um erro ao criar o orçamento :(");
+			return;
+		}
+
+		nomeSlide.value = "";
+		celularSlide.value = "";
+
+		alert("Orçamento criado com sucesso!");
+
+	} catch (ex) {
+		alert("Ocorreu um erro de rede ao criar o orçamento: " + ex.message)
+	}
+}
 </script>
 
 
