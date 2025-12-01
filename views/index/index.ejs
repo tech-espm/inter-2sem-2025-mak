@@ -13,7 +13,7 @@
       <h1>Soluções Sustentáveis para um Futuro Melhor</h1>
       <p>Tornamos suas ideias em construção ecológica e aconselhamos seus projetos.</p>
       <div class="buttons">
-        <a href="#contato"><button class="btn-green">Orçamento</button></a>
+        <a href="#orcamento"><button class="btn-green">Orçamento</button></a>
         <a href="#servicos"><button class="btn-outline">Serviços</button></a>
       </div>
     </div>
@@ -91,90 +91,180 @@
     </div>
   </section>
 
-  <section id="orcamento" class="orcamento-section">
-  <p class="orcamento-sub">Clique abaixo para agendar on-line ou fisicamente no escritório.</p>
-  <h2 class="orcamento-title">Solicite seu orçamento</h2>
+  <section id="servicos" class="servicos-section">
+  <div class="servicos-header">
+    <h2>
+      <span>Serviços:</span> soluções completas para atender as
+      necessidades do seu negócio
+    </h2>
+    <p>
+      Equipes de especialista em engenharia ambiental, civil e em obra.
+    </p>
+  </div>
 
-  <div class="orcamento-botoes">
-    <button class="btn-cadastrar" onclick="abrirPopup()">Cadastrar</button>
-    <button class="btn-calendly"
-      onclick="window.open('https://calendly.com/', '_blank')">
-      Agendar horário
-    </button>
+  <div class="servicos-cards">
+
+    <!-- Card 1 -->
+    <div class="servico-card-box">
+      <h3>Execução Completa do Projeto</h3>
+      <p class="servico-sub">
+        Projetos completos de energia fotovoltaica para residências e empresas
+      </p>
+      <ul>
+        <li><span class="check-icon">✓</span> Análise de viabilidade</li>
+        <li><span class="check-icon">✓</span> Projeto personalizado</li>
+        <li><span class="check-icon">✓</span> Instalação completa</li>
+        <li><span class="check-icon">✓</span> Manutenção</li>
+      </ul>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="servico-card-box">
+      <h3>Elaboração do Projeto</h3>
+      <p class="servico-sub">
+        Assessoria especializada para implementação de práticas sustentáveis
+      </p>
+      <ul>
+        <li><span class="check-icon">✓</span> Auditoria ambiental</li>
+        <li><span class="check-icon">✓</span> Certificações</li>
+        <li><span class="check-icon">✓</span> Gestão de resíduos</li>
+        <li><span class="check-icon">✓</span> ESG</li>
+      </ul>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="servico-card-box">
+      <h3>Consultoria para Projetos</h3>
+      <p class="servico-sub">
+        Soluções em energia eólica para grandes empreendimentos
+      </p>
+      <ul>
+        <li><span class="check-icon">✓</span> Estudo de ventos</li>
+        <li><span class="check-icon">✓</span> Projeto técnico</li>
+        <li><span class="check-icon">✓</span> Licenciamento</li>
+        <li><span class="check-icon">✓</span> Implementação</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
-<!-- POP-UP -->
-<div id="popup" class="popup-container">
-  <div class="popup-card">
-    <h3>Cadastro para Orçamento</h3>
+  <!-- ORCAMENTO-->
+<section id="orcamento" class="orcamento-section">
+    <p class="subtexto-orcamento">
+        Clique abaixo para agendar on-line ou fisicamente no escritório.
+    </p>
+
+    <h2 class="titulo-orcamento">Solicite seu orçamento</h2>
+
+    <!-- Botão principal -->
+    <button class="btn-agendar" onclick="window.location.href='https://calendly.com'">
+        Agendar horário
+    </button>
+
+    <div class="texto-ou">OU</div>
+
+    <!-- Botão cadastro -->
+    <button class="btn-cadastrar" onclick="abrirPopupSlide()">
+        Cadastrar
+    </button>
+
+    <p class="legenda-cadastro">
+        Ao se cadastrar, entraremos em contato em até <strong>24h úteis.</strong>
+    </p>
+</section>
+<!-- POP-UP LATERAL -->
+<div id="popup-slide" class="popup-slide-container">
+  <div class="popup-slide">
+    
+    <div class="popup-slide-header">
+      <h3>Cadastro para Orçamento</h3>
+      <button class="popup-close" onclick="fecharPopupSlide()">✕</button>
+    </div>
 
     <label>Nome completo</label>
-    <input type="text" id="nome" placeholder="Digite seu nome">
+    <input type="text" id="nomeSlide" placeholder="Insira seu nome completo" />
 
-    <label>WhatsApp</label>
-    <input type="text" id="whats" placeholder="(11) 90000-0000">
+    <label>Celular (WhatsApp)</label>
+    <input type="text" id="celularSlide" placeholder="(11) 99999-9999" />
 
-    <div class="popup-actions">
-      <button onclick="fecharPopup()" class="btn-cancelar">Cancelar</button>
-      <button onclick="enviarCadastro()" class="btn-enviar">Enviar</button>
-    </div>
+    <button class="btn-enviar-popup">Enviar</button>
   </div>
 </div>
 
+<script>
+function abrirPopupSlide() {
+    document.getElementById("popup-slide").style.width = "100%";
+}
 
-<section id="localizacao" class="loc-section">
-  <div class="loc-header">
-    <h3>Nossa Localização</h3>
+function fecharPopupSlide() {
+    document.getElementById("popup-slide").style.width = "0";
+}
+</script>
+
+
+<section id="localizacao" class="contato-section">
+  <div class="contato-header">
+    <h2>Nossa Localização</h2>
     <p>
       Visite nosso escritório ou entre em contato conosco. Estamos localizados em uma região
       de fácil acesso na cidade de São Paulo.
     </p>
   </div>
 
-  <div class="loc-grid">
-    <!-- COLUNA ESQUERDA -->
-    <div class="loc-col-esquerda">
+  <div class="contato-grid">
 
-      <!-- Card Endereço -->
-      <div class="loc-card">
+    <!-- COLUNA ESQUERDA -->
+    <div class="contato-esq">
+
+      <!-- CARD ENDEREÇO -->
+      <div class="contato-card">
         <h4>Endereço</h4>
-        <p>Rua das Soluções Sustentáveis, 123<br>
-           Vila Verde<br>
-           São Paulo - SP<br>
-           CEP: 01234-567
+
+        <p>
+          Rua Joaquim Távora, 1240<br>
+          Vila Mariana<br>
+          São Paulo - SP<br>
+          CEP: 04015-002
         </p>
 
-        <div class="loc-mapa">
-          <div class="loc-mapa-icone">📍</div>
-          <div class="loc-mapa-textos">
-            <strong>Mapa Interativo</strong>
-            <span>Visualização do Google Maps</span>
-          </div>
-        </div>
+        <!-- MAPA INTERATIVO -->
+        <iframe
+          width="100%"
+          height="220"
+          style="border:0; border-radius:14px; margin-top:16px;"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.177723681374!2d-46.63936288447408!3d-23.561094467012263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c635b7a3dd%3A0x8c95f8a805d6e7da!2sR.%20Joaquim%20T%C3%A1vora%2C%201240%20-%20Vila%20Mariana%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004015-002!5e0!3m2!1spt-BR!2sbr!4v1700156962000">
+        </iframe>
 
-        <button class="loc-btn-maps">Abrir no Google Maps</button>
+        <!-- BOTÃO GOOGLE MAPS -->
+        <button class="btn-mapa"
+          onclick="window.open('https://www.google.com/maps/search/?api=1&query=Rua+Joaquim+Távora,+1240,+São+Paulo', '_blank')">
+          Abrir no Google Maps
+        </button>
       </div>
 
-      <!-- Card Como Chegar -->
-      <div class="loc-card">
+      <!-- COMO CHEGAR -->
+      <div class="contato-card">
         <h4>Como Chegar</h4>
 
-        <div class="loc-comochegar-item">
-          <div class="loc-icone-circ">🚇</div>
+        <div class="contato-comochegar-item">
+          <div class="contato-icn-circ">🚇</div>
           <div>
-            <strong>Metro</strong><br>
-            Estação Vila Madalena (Linha 2 - Verde)<br>
-            800m caminhando
+            <strong>Metrô</strong><br>
+            Estação Ana Rosa (Linhas Azul e Verde)<br>
+            900m caminhando
           </div>
         </div>
 
-        <div class="loc-comochegar-item">
-          <div class="loc-icone-circ">🚌</div>
+        <div class="contato-comochegar-item">
+          <div class="contato-icn-circ">🚌</div>
           <div>
             <strong>Ônibus</strong><br>
-            Linhas 702M, 875A, 8012<br>
-            Ponto em frente ao escritório
+            Linhas 5106, 175T, 7181<br>
+            Ponto próximo ao escritório
           </div>
         </div>
       </div>
@@ -182,65 +272,198 @@
     </div>
 
     <!-- COLUNA DIREITA -->
-    <div class="loc-col-direita">
+    <div class="contato-dir">
 
-      <!-- Card Informações de Contato -->
-      <div class="loc-card">
+      <!-- CARD INFORMAÇÕES DE CONTATO -->
+      <div class="contato-card">
         <h4>Informações de Contato</h4>
 
-        <div class="loc-contato-item">
-          <div class="loc-icone-circ">📞</div>
+        <div class="contato-item">
+          <div class="contato-icn">📞</div>
           <div>
             <strong>(11) 3456-7890</strong><br>
             Telefone comercial
           </div>
         </div>
 
-        <div class="loc-contato-item">
-          <div class="loc-icone-circ">✉️</div>
+        <div class="contato-item">
+          <div class="contato-icn">✉️</div>
           <div>
             <strong>contato@mak.com.br</strong><br>
             E-mail principal
           </div>
         </div>
 
-        <div class="loc-contato-item">
-          <div class="loc-icone-circ">💬</div>
+        <div class="contato-item">
+          <div class="contato-icn">💬</div>
           <div>
             <strong>(11) 99999-9999</strong><br>
             WhatsApp
           </div>
         </div>
 
-        <div class="loc-contato-botoes">
-          <button class="loc-btn-whats">WhatsApp</button>
-          <button class="loc-btn-ligar">Ligar</button>
+        <div class="contato-botoes">
+          <button class="btn-whats" onclick="window.open('https://wa.me/5511999999999','_blank')">WhatsApp</button>
+          <button class="btn-ligar" onclick="window.open('tel:1134567890')">Ligar</button>
         </div>
       </div>
 
-      <!-- Card Horário de Funcionamento -->
-      <div class="loc-card">
+      <!-- CARD HORÁRIO -->
+      <div class="contato-card">
         <h4>Horário de Funcionamento</h4>
 
-        <div class="loc-horario-linha">
+        <div class="contato-horario-linha">
           <span>Segunda a Sexta</span>
-          <span class="loc-horario">8h às 18h</span>
-        </div>
-        <div class="loc-horario-linha">
-          <span>Sábado</span>
-          <span class="loc-horario">8h às 12h</span>
-        </div>
-        <div class="loc-horario-linha">
-          <span>Domingo</span>
-          <span class="loc-fechado">Fechado</span>
+          <span class="contato-horario">8h às 18h</span>
         </div>
 
-        <div class="loc-alerta">
+        <div class="contato-horario-linha">
+          <span>Sábado</span>
+          <span class="contato-horario">8h às 12h</span>
+        </div>
+
+        <div class="contato-horario-linha">
+          <span>Domingo</span>
+          <span class="contato-fechado">Fechado</span>
+        </div>
+
+        <div class="contato-alerta">
           💡 Atendimento de emergência 24h para clientes corporativos
         </div>
       </div>
 
     </div>
+
+  </div>
+</section>
+
+
+<section id="faq" class="faq-section">
+  <div class="faq-header">
+    <h2>Perguntas Frequentes</h2>
+    <p>
+      Tire suas dúvidas sobre energia solar e nossas soluções sustentáveis.
+      Se não encontrar sua pergunta, entre em contato conosco.
+    </p>
+  </div>
+
+  <div class="faq-lista">
+    <!-- Item 1 -->
+    <div class="faq-item">
+      <button class="faq-pergunta">
+        <span>Quanto tempo leva para instalar um sistema de energia solar?</span>
+        <span class="faq-icone">▾</span>
+      </button>
+      <div class="faq-resposta">
+        <p>
+          Em média, a instalação leva de 3 a 7 dias úteis, dependendo do tamanho
+          do projeto, das condições do telhado e das autorizações necessárias.
+        </p>
+      </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="faq-item">
+      <button class="faq-pergunta">
+        <span>Qual é o retorno do investimento em energia solar?</span>
+        <span class="faq-icone">▾</span>
+      </button>
+      <div class="faq-resposta">
+        <p>
+          O payback costuma variar entre 3 e 6 anos, de acordo com o perfil de consumo,
+          tarifa de energia e tamanho do sistema instalado.
+        </p>
+      </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="faq-item">
+      <button class="faq-pergunta">
+        <span>O sistema funciona em dias nublados ou chuvosos?</span>
+        <span class="faq-icone">▾</span>
+      </button>
+      <div class="faq-resposta">
+        <p>
+          Sim. Em dias nublados a geração é reduzida, mas os painéis continuam produzindo
+          energia a partir da luminosidade disponível.
+        </p>
+      </div>
+    </div>
+
+    <!-- Item 4 -->
+    <div class="faq-item">
+      <button class="faq-pergunta">
+        <span>Preciso fazer manutenção no sistema solar?</span>
+        <span class="faq-icone">▾</span>
+      </button>
+      <div class="faq-resposta">
+        <p>
+          A manutenção é simples e geralmente envolve apenas limpeza periódica dos
+          painéis e checagens preventivas anuais.
+        </p>
+      </div>
+    </div>
+
+    <!-- Item 5 -->
+    <div class="faq-item">
+      <button class="faq-pergunta">
+        <span>Posso vender energia de volta para a rede elétrica?</span>
+        <span class="faq-icone">▾</span>
+      </button>
+      <div class="faq-resposta">
+        <p>
+          Sim. No modelo de compensação de energia, o excedente gerado vira créditos
+          na sua conta de luz, conforme regulamentação da sua distribuidora.
+        </p>
+      </div>
+    </div>
+
+    <!-- Item 6 -->
+    <div class="faq-item">
+      <button class="faq-pergunta">
+        <span>Qual o tamanho mínimo para um projeto de energia solar?</span>
+        <span class="faq-icone">▾</span>
+      </button>
+      <div class="faq-resposta">
+        <p>
+          Não existe um tamanho “mínimo”, mas dimensionamos o sistema a partir do
+          seu consumo médio mensal para que o investimento faça sentido.
+        </p>
+      </div>
+    </div>
+
+    <!-- Item 7 -->
+    <div class="faq-item">
+      <button class="faq-pergunta">
+        <span>Vocês oferecem financiamento para os projetos?</span>
+        <span class="faq-icone">▾</span>
+      </button>
+      <div class="faq-resposta">
+        <p>
+          Sim, trabalhamos com instituições parceiras que oferecem linhas de crédito
+          específicas para energia solar, com prazos e taxas competitivas.
+        </p>
+      </div>
+    </div>
+
+    <!-- Item 8 -->
+    <div class="faq-item">
+      <button class="faq-pergunta">
+        <span>O que está incluso no serviço de instalação?</span>
+        <span class="faq-icone">▾</span>
+      </button>
+      <div class="faq-resposta">
+        <p>
+          Incluímos projeto, equipamentos, instalação, conexões elétricas, suporte
+          à homologação com a distribuidora e orientações de uso do sistema.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-cta">
+    <p>Não encontrou a resposta que procurava?</p>
+    <a href="#orcamento">Agende uma consulta gratuita →</a>
   </div>
 </section>
 

@@ -374,130 +374,471 @@ section {
 
 /* ---------- SEÇÃO ORÇAMENTO ---------- */
 
+/* SEÇÃO ORÇAMENTO */
 .orcamento-section {
-  background: #e8f9e8;
-  padding: 80px;
-  text-align: center;
+    text-align: center;
+    padding: 120px 20px;
+    background: #eaf7e8;
 }
 
-.orcamento-title {
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-top: 10px;
+.subtexto-orcamento {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #444;
 }
 
-.orcamento-sub {
-  font-size: 1rem;
-  color: #555;
+.titulo-orcamento {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 50px;
 }
 
-.orcamento-botoes {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+/* BOTÃO AGENDAR */
+.btn-agendar {
+    background: #3d82f6;
+    color: #fff;
+    border: none;
+    padding: 15px 45px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-/* Botão cadastrar */
+.btn-agendar:hover {
+    background: #2563eb;
+}
+
+/* OU */
+.texto-ou {
+    font-size: 1.1rem;
+    margin: 35px 0 35px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* BOTÃO CADASTRAR */
 .btn-cadastrar {
-  background: #00a74f;
-  color: white;
-  padding: 12px 22px;
-  border-radius: 10px;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  font-weight: 600;
+    background: #0d9f43;
+    color: #fff;
+    border: none;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .btn-cadastrar:hover {
-  background: #008a41;
+    background: #0a7b34;
 }
 
-/* Botão Calendly */
-.btn-calendly {
-  background: #3b82f6;
-  color: white;
-  padding: 12px 22px;
-  border-radius: 10px;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  font-weight: 600;
+/* LEGENDA */
+.legenda-cadastro {
+    margin-top: 25px;
+    font-size: 0.95rem;
+    color: #444;
 }
 
-.btn-calendly:hover {
-  background: #2563eb;
+/* POP-UP LATERAL */
+.popup-slide-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 0;
+    background: rgba(0,0,0,0.35);
+    overflow: hidden;
+    transition: 0.3s ease;
+    z-index: 9999;
 }
 
-/* ---------- POP-UP ---------- */
-
-.popup-container {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0,0,0,0.4);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+.popup-slide {
+    width: 340px;
+    height: 100%;
+    background: #fff;
+    padding: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.15);
 }
 
-.popup-card {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+.popup-slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
 }
 
-.popup-card h3 {
+.popup-close {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.popup-slide label {
+    margin-top: 15px;
+    display: block;
+    font-weight: 600;
+}
+
+.popup-slide input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.btn-enviar-popup {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background: #0d9f43;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-enviar-popup:hover {
+    background: #0a7b34;
+}
+
+
+
+/* ===========================
+   FAQ
+   =========================== */
+
+.faq-section {
+  background-color: #e8f9e8;
+  padding: 80px 80px;
+}
+
+.faq-header {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 1.4rem;
+  margin-bottom: 32px;
 }
 
-.popup-card label {
-  display: block;
-  font-weight: 600;
-  margin-top: 10px;
+.faq-header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 10px;
 }
 
-.popup-card input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1.5px solid #ccc;
-  margin-top: 6px;
+.faq-header p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.popup-actions {
-  text-align: right;
-  margin-top: 20px;
+.faq-lista {
+  max-width: 900px;
+  margin: 0 auto 32px;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
   gap: 10px;
 }
 
-.btn-cancelar {
-  background: #ccc;
+.faq-item {
+  background: #f5fdf6;
+  border-radius: 999px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  overflow: hidden;
+}
+
+/* cabeçalho da pergunta */
+.faq-pergunta {
+  width: 100%;
   border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
+  background: transparent;
+  padding: 14px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.faq-pergunta span:first-child {
+  flex: 1;
+}
+
+.faq-icone {
+  margin-left: 12px;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+/* corpo da resposta (começa escondido) */
+.faq-resposta {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 22px;
+  background: #f8fff8;
+  transition: max-height 0.25s ease, padding-top 0.2s ease, padding-bottom 0.2s ease;
+}
+
+.faq-resposta p {
+  font-size: 0.9rem;
+  color: #4b5563;
+  padding-bottom: 14px;
+}
+
+/* estado aberto */
+.faq-item.ativo {
+  border-radius: 18px;
+}
+
+.faq-item.ativo .faq-resposta {
+  max-height: 200px;   /* suficiente para 1–2 parágrafos */
+  padding-top: 4px;
+}
+
+.faq-item.ativo .faq-icone {
+  transform: rotate(180deg);
+}
+
+/* CTA final */
+.faq-cta {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.faq-cta p {
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.faq-cta a {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+/* responsivo */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 60px 20px;
+  }
+
+  .faq-item {
+    border-radius: 18px;
+  }
+}
+
+/* =======================================
+   CONTATE-NOS / LOCALIZAÇÃO – DESENHO COMPLETO
+   ======================================= */
+
+.contato-section {
+  background-color: #e8f9e8;
+  padding: 80px 80px;
+}
+
+.contato-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 40px;
+}
+
+.contato-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.contato-header p {
+  color: #4b5563;
+  font-size: 0.98rem;
+}
+
+/* GRID PRINCIPAL */
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px;
+}
+
+/* COLUNAS */
+.contato-esq,
+.contato-dir {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* CARDS */
+.contato-card {
+  background: white;
+  padding: 26px 26px 22px;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.contato-card h4 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #111827;
+}
+
+.contato-card p {
+  color: #374151;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* MAPA BOX */
+.contato-mapa {
+  margin-top: 16px;
+  background: #eef0ff;
+  padding: 22px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contato-mapa-icone {
+  font-size: 1.9rem;
+  color: #4f46e5;
+}
+
+.contato-mapa-textos strong {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.contato-mapa-textos span {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* BOTÃO MAPA */
+.btn-mapa {
+  margin-top: 18px;
+  width: 100%;
+  background: #00a74f;
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
   cursor: pointer;
 }
 
-.btn-enviar {
+/* ITENS COM ÍCONE */
+.contato-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.contato-icn {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: #e6f7ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+/* BOTÕES DE CONTATO */
+.contato-botoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.btn-whats {
+  flex: 1;
   background: #00a74f;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  cursor: pointer;
   color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 999px;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-ligar {
+  flex: 1;
+  background: white;
+  color: #00a74f;
+  border: 2px solid #00a74f;
+  padding: 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* HORÁRIO */
+.contato-horario-linha {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 0.92rem;
+}
+
+.contato-horario {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.contato-fechado {
+  color: #9ca3af;
+  font-weight: 600;
+}
+
+/* ALERTA */
+.contato-alerta {
+  margin-top: 18px;
+  background: #e6f8e6;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.85rem;
+  color: #166534;
+}
+
+/* COMO CHEGAR */
+.contato-comochegar-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.contato-icn-circ {
+  width: 38px;
+  height: 38px;
+  background: #e7f5ee;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .contato-section {
+    padding: 60px 20px;
+  }
+
+  .contato-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 
