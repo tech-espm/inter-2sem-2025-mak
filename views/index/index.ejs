@@ -1,56 +1,251 @@
 ﻿<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mak Soluções Sustentáveis</title>
-<link rel="stylesheet" href="/public/css/estilo.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mak Soluções Sustentáveis</title>
+  <link rel="stylesheet" href="/public/css/estilo.css" />
 </head>
 <body>
 
-<section id="inicio" class="hero">
+  <!-- HERO -->
+  <section id="inicio" class="hero">
     <div>
-        <h1>Soluções Sustentáveis para um Futuro Melhor</h1>
-        <p>Tornamos suas ideias em construção ecológica e aconselhamos seus projetos.</p>
-        <div class="buttons">
-            <a href="#contato"><button class="btn-green">Orçamento</button></a>
-            <a href="#servicos"><button class="btn-outline">Serviços</button></a>
+      <h1>Soluções Sustentáveis para um Futuro Melhor</h1>
+      <p>Tornamos suas ideias em construção ecológica e aconselhamos seus projetos.</p>
+      <div class="buttons">
+        <a href="#contato"><button class="btn-green">Orçamento</button></a>
+        <a href="#servicos"><button class="btn-outline">Serviços</button></a>
+      </div>
+    </div>
+  </section>
+
+ <!-- SOBRE A MAK -->
+<section id="sobre" class="sobre-mak">
+  <div class="sobre-conteudo">
+
+    <!-- COLUNA ESQUERDA: TEXTO -->
+    <div class="sobre-texto">
+      <h2>Sobre a <span>MAK</span></h2>
+
+      <p>
+        Somos uma empresa especializada em soluções sustentáveis e energia renovável,
+        comprometida em transformar o cenário energético brasileiro através de tecnologias
+        inovadoras e práticas ambientalmente responsáveis.
+      </p>
+
+      <p>
+        Com mais de 10 anos de experiência no mercado, já realizamos centenas de projetos
+        que contribuem para a redução da pegada de carbono e para a construção de um
+        futuro mais sustentável.
+      </p>
+
+      <div class="sobre-metricas">
+        <div class="metrica">
+          <strong>500+</strong>
+          <span>Projetos Realizados</span>
         </div>
+        <div class="metrica">
+          <strong>10+</strong>
+          <span>Anos de Experiência</span>
+        </div>
+        <div class="metrica">
+          <strong>50MW</strong>
+          <span>Energia Instalada</span>
+        </div>
+        <div class="metrica">
+          <strong>100%</strong>
+          <span>Clientes Satisfeitos</span>
+        </div>
+      </div>
     </div>
+
+    <!-- COLUNA DIREITA: IMAGEM + CARD -->
+    <div class="sobre-imagem">
+      <img
+        src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80"
+        alt="Profissional em usina solar"
+      >
+
+      <div class="sobre-card-missao">
+        <h4>Nossa Missão</h4>
+        <p>Democratizar o acesso à energia limpa e sustentável.</p>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-<!-- SERVIÇOS -->
-<section id="servicos">
-    <h2>Nossos Serviços</h2>
-    <div class="servico-card">
-        <h3>Instalação de Painéis Solares</h3>
-        <p>Economize energia e invista em sustentabilidade com nossos projetos solares completos.</p>
-    </div>
-    <div class="servico-card">
-        <h3>Consultoria Energética</h3>
-        <p>Análise detalhada do seu consumo energético para reduzir custos e aumentar eficiência.</p>
-    </div>
-    <div class="servico-card">
-        <h3>Projetos Sustentáveis</h3>
-        <p>Transforme ideias em obras ecológicas e eficientes, respeitando o meio ambiente.</p>
-    </div>
-    <div class="servico-card">
-        <h3>Manutenção e Monitoramento</h3>
-        <p>Garantimos o desempenho e a durabilidade do seu sistema sustentável.</p>
-    </div>
-</section>
 
-<!-- BLOG -->
-<section id="blog">
+  <!-- BLOG -->
+  <section id="blog">
     <h2>Nosso Blog 🌱</h2>
     <div class="post">
-        <img src="https://source.unsplash.com/600x400/?solar,energy" alt="Post 1">
-        <h3>Energia solar: o futuro da sustentabilidade</h3>
-        <p>Descubra como os painéis solares estão revolucionando a forma como o mundo consome energia limpa.</p>
+      <img src="https://source.unsplash.com/600x400/?solar,energy" alt="Post 1">
+      <h3>Energia solar: o futuro da sustentabilidade</h3>
+      <p>Descubra como os painéis solares estão revolucionando a forma como o mundo consome energia limpa.</p>
     </div>
     <div class="post">
-        <img src="https://source.unsplash.com/600x400/?eco,city" alt="Post 2">
-        <h3>Cidades inteligentes e energia verde</h3>
-        <p>As metrópoles do futuro já estão surgindo — saiba como a tecnologia e o meio ambiente podem coexistir.</p>
+      <img src="https://source.unsplash.com/600x400/?eco,city" alt="Post 2">
+      <h3>Cidades inteligentes e energia verde</h3>
+      <p>As metrópoles do futuro já estão surgindo — saiba como a tecnologia e o meio ambiente podem coexistir.</p>
     </div>
+  </section>
+
+  <section id="orcamento" class="orcamento-section">
+  <p class="orcamento-sub">Clique abaixo para agendar on-line ou fisicamente no escritório.</p>
+  <h2 class="orcamento-title">Solicite seu orçamento</h2>
+
+  <div class="orcamento-botoes">
+    <button class="btn-cadastrar" onclick="abrirPopup()">Cadastrar</button>
+    <button class="btn-calendly"
+      onclick="window.open('https://calendly.com/', '_blank')">
+      Agendar horário
+    </button>
+  </div>
 </section>
+
+<!-- POP-UP -->
+<div id="popup" class="popup-container">
+  <div class="popup-card">
+    <h3>Cadastro para Orçamento</h3>
+
+    <label>Nome completo</label>
+    <input type="text" id="nome" placeholder="Digite seu nome">
+
+    <label>WhatsApp</label>
+    <input type="text" id="whats" placeholder="(11) 90000-0000">
+
+    <div class="popup-actions">
+      <button onclick="fecharPopup()" class="btn-cancelar">Cancelar</button>
+      <button onclick="enviarCadastro()" class="btn-enviar">Enviar</button>
+    </div>
+  </div>
+</div>
+
+
+<section id="localizacao" class="loc-section">
+  <div class="loc-header">
+    <h3>Nossa Localização</h3>
+    <p>
+      Visite nosso escritório ou entre em contato conosco. Estamos localizados em uma região
+      de fácil acesso na cidade de São Paulo.
+    </p>
+  </div>
+
+  <div class="loc-grid">
+    <!-- COLUNA ESQUERDA -->
+    <div class="loc-col-esquerda">
+
+      <!-- Card Endereço -->
+      <div class="loc-card">
+        <h4>Endereço</h4>
+        <p>Rua das Soluções Sustentáveis, 123<br>
+           Vila Verde<br>
+           São Paulo - SP<br>
+           CEP: 01234-567
+        </p>
+
+        <div class="loc-mapa">
+          <div class="loc-mapa-icone">📍</div>
+          <div class="loc-mapa-textos">
+            <strong>Mapa Interativo</strong>
+            <span>Visualização do Google Maps</span>
+          </div>
+        </div>
+
+        <button class="loc-btn-maps">Abrir no Google Maps</button>
+      </div>
+
+      <!-- Card Como Chegar -->
+      <div class="loc-card">
+        <h4>Como Chegar</h4>
+
+        <div class="loc-comochegar-item">
+          <div class="loc-icone-circ">🚇</div>
+          <div>
+            <strong>Metro</strong><br>
+            Estação Vila Madalena (Linha 2 - Verde)<br>
+            800m caminhando
+          </div>
+        </div>
+
+        <div class="loc-comochegar-item">
+          <div class="loc-icone-circ">🚌</div>
+          <div>
+            <strong>Ônibus</strong><br>
+            Linhas 702M, 875A, 8012<br>
+            Ponto em frente ao escritório
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- COLUNA DIREITA -->
+    <div class="loc-col-direita">
+
+      <!-- Card Informações de Contato -->
+      <div class="loc-card">
+        <h4>Informações de Contato</h4>
+
+        <div class="loc-contato-item">
+          <div class="loc-icone-circ">📞</div>
+          <div>
+            <strong>(11) 3456-7890</strong><br>
+            Telefone comercial
+          </div>
+        </div>
+
+        <div class="loc-contato-item">
+          <div class="loc-icone-circ">✉️</div>
+          <div>
+            <strong>contato@mak.com.br</strong><br>
+            E-mail principal
+          </div>
+        </div>
+
+        <div class="loc-contato-item">
+          <div class="loc-icone-circ">💬</div>
+          <div>
+            <strong>(11) 99999-9999</strong><br>
+            WhatsApp
+          </div>
+        </div>
+
+        <div class="loc-contato-botoes">
+          <button class="loc-btn-whats">WhatsApp</button>
+          <button class="loc-btn-ligar">Ligar</button>
+        </div>
+      </div>
+
+      <!-- Card Horário de Funcionamento -->
+      <div class="loc-card">
+        <h4>Horário de Funcionamento</h4>
+
+        <div class="loc-horario-linha">
+          <span>Segunda a Sexta</span>
+          <span class="loc-horario">8h às 18h</span>
+        </div>
+        <div class="loc-horario-linha">
+          <span>Sábado</span>
+          <span class="loc-horario">8h às 12h</span>
+        </div>
+        <div class="loc-horario-linha">
+          <span>Domingo</span>
+          <span class="loc-fechado">Fechado</span>
+        </div>
+
+        <div class="loc-alerta">
+          💡 Atendimento de emergência 24h para clientes corporativos
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 </body>
+</html>
+
+

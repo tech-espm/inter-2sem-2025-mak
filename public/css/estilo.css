@@ -263,78 +263,243 @@ section {
    SOBRE
    =========================== */
 
-#sobre {
-  background-color: #eafaea;
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
+/* ----- SEÇÃO SOBRE A MAK ----- */
+
+.sobre-mak {
+    background-color: #e8f9e8;      /* verde bem clarinho de fundo */
+    padding: 80px 80px;
+}
+
+.sobre-conteudo {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .sobre-texto {
-  flex: 1;
+    flex: 1;
+    max-width: 480px;
+}
+
+.sobre-texto h2 {
+    color: #008037;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.sobre-texto h2 span {
+    color: #008037;
+    font-weight: 700;
+}
+
+.sobre-texto p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.sobre-metricas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.metrica strong {
+    display: block;
+    font-size: 1.6rem;
+    color: #008037;
+}
+
+.metrica span {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Imagem e card de missão */
+.sobre-imagem {
+    flex: 1;
+    position: relative;
 }
 
 .sobre-imagem img {
-  width: 100%;
-  border-radius: 10px;
+    width: 100%;
+    border-radius: 16px;
+    display: block;
 }
+
+.sobre-card-missao {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: #ffffff;
+    padding: 14px 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    max-width: 260px;
+}
+
+.sobre-card-missao h4 {
+    margin: 0 0 4px;
+    color: #008037;
+    font-size: 0.95rem;
+}
+
+.sobre-card-missao p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .sobre-mak {
+        padding: 60px 24px;
+    }
+
+    .sobre-conteudo {
+        flex-direction: column;
+    }
+
+    .sobre-imagem {
+        margin-top: 32px;
+    }
+}
+
 
 /* ===========================
    CONTATO / ORÇAMENTO
    =========================== */
 
-#contato {
-  background: #fff;
+/* ---------- SEÇÃO ORÇAMENTO ---------- */
+
+.orcamento-section {
+  background: #e8f9e8;
+  padding: 80px;
+  text-align: center;
 }
 
-.formulario {
-  background: white;
-  padding: 40px;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 500px;
-  margin: auto;
+.orcamento-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-top: 10px;
 }
 
-.formulario label {
-  font-weight: 600;
-  color: #333;
-  display: block;
-  margin-bottom: 6px;
+.orcamento-sub {
+  font-size: 1rem;
+  color: #555;
 }
 
-.formulario input,
-.formulario select,
-.formulario textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1.5px solid #ccc;
-  border-radius: 8px;
-  margin-bottom: 20px;
+.orcamento-botoes {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.formulario button {
+/* Botão cadastrar */
+.btn-cadastrar {
   background: #00a74f;
   color: white;
+  padding: 12px 22px;
+  border-radius: 10px;
   border: none;
-  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-cadastrar:hover {
+  background: #008a41;
+}
+
+/* Botão Calendly */
+.btn-calendly {
+  background: #3b82f6;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-calendly:hover {
+  background: #2563eb;
+}
+
+/* ---------- POP-UP ---------- */
+
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.popup-card h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.popup-card label {
+  display: block;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.popup-card input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+  margin-top: 6px;
+}
+
+.popup-actions {
+  text-align: right;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-cancelar {
+  background: #ccc;
+  border: none;
+  padding: 10px 16px;
   border-radius: 8px;
   cursor: pointer;
 }
 
-/* ===========================
-   FOOTER
-   =========================== */
-
-footer {
-  text-align: center;
-  padding: 30px;
-  background-color: #e8f8e8;
-  color: #333;
-  font-size: 14px;
+.btn-enviar {
+  background: #00a74f;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
 }
+
 
 /* ===========================
    RESPONSIVO
@@ -374,3 +539,6 @@ footer {
     font-size: 1.2rem;
   }
 }
+
+
+

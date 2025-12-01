@@ -1,20 +1,59 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mak Soluções Sustentáveis</title>
-<link rel="stylesheet" href="/public/css/estilo.css" />
-</head>
-<body>
-<section id="sobre">
+<%- include("../comum/cabecalho") %>
+<%- include("../comum/barra") %>
+
+<section id="sobre" class="sobre-mak">
+  <div class="sobre-conteudo">
+
+    <!-- COLUNA ESQUERDA: TEXTO -->
     <div class="sobre-texto">
-        <h2>Sobre a <span style="color:#00994d;">MAK</span></h2>
-        <p>Somos uma empresa especializada em soluções sustentáveis e energia renovável, comprometida em transformar o cenário energético brasileiro.</p>
-        <p>Com mais de 10 anos de experiência no mercado, já realizamos centenas de projetos que reduzem a pegada de carbono e impulsionam a energia limpa.</p>
+      <h2>Sobre a <span>MAK</span></h2>
+
+      <p>
+        Somos uma empresa especializada em soluções sustentáveis e energia renovável,
+        comprometida em transformar o cenário energético brasileiro através de tecnologias
+        inovadoras e práticas ambientalmente responsáveis.
+      </p>
+
+      <p>
+        Com mais de 10 anos de experiência no mercado, já realizamos centenas de projetos
+        que contribuem para a redução da pegada de carbono e para a construção de um
+        futuro mais sustentável.
+      </p>
+
+      <div class="sobre-metricas">
+        <div class="metrica">
+          <strong>500+</strong>
+          <span>Projetos Realizados</span>
+        </div>
+        <div class="metrica">
+          <strong>10+</strong>
+          <span>Anos de Experiência</span>
+        </div>
+        <div class="metrica">
+          <strong>50MW</strong>
+          <span>Energia Instalada</span>
+        </div>
+        <div class="metrica">
+          <strong>100%</strong>
+          <span>Clientes Satisfeitos</span>
+        </div>
+      </div>
     </div>
+
+    <!-- COLUNA DIREITA: IMAGEM + CARD -->
     <div class="sobre-imagem">
-        <img src="https://source.unsplash.com/600x400/?solar,panel" alt="Equipe MAK">
+      <img
+        src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80"
+        alt="Profissional em usina solar"
+      >
+
+      <div class="sobre-card-missao">
+        <h4>Nossa Missão</h4>
+        <p>Democratizar o acesso à energia limpa e sustentável.</p>
+      </div>
     </div>
+
+  </div>
 </section>
-</body>
+
+<%- include("../comum/rodape") %>
