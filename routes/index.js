@@ -20,7 +20,7 @@ router.get("/blog", wrap(async (req, res) => {
 	let lista;
 
 	await sql.connect(async sql => {
-		lista = await sql.query("select id, titulo, tags, autor, date_format(data, '%d/%m/%Y') data from post order by id desc limit 12");
+		lista = await sql.query("select id, titulo, tags, autor, date_format(dia, '%d/%m/%Y') data from post order by id desc limit 12");
 	});
 
 	let opcoes = {
