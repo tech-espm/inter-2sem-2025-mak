@@ -1,399 +1,49 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <title>MAK | Post do Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <style>
-    /* ====== RESET / BASE ====== */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <main>
+    <article class="blog-card">
+      <p class="blog-date">11/10/2025</p>
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background: #f4fbf6;
-      color: #111827;
-    }
+      <h1 class="blog-tag">Post</h1>
+      <h2 class="blog-tag-sub">da Semana</h2>
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* ====== HEADER SIMPLES (OPCIONAL) ====== */
-    header {
-      width: 100%;
-      padding: 16px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #ffffff;
-      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.06);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .logo {
-      font-weight: 700;
-      font-size: 1.05rem;
-      padding: 6px 14px;
-      border-radius: 999px;
-      background: #e7f8ef;
-      color: #059669;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      font-size: 0.95rem;
-      color: #4b5563;
-    }
-
-    .nav-links a:hover {
-      color: #059669;
-    }
-
-    .btn-contato {
-      padding: 8px 18px;
-      border-radius: 999px;
-      border: none;
-      background: #16a34a;
-      color: #ffffff;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .btn-contato:hover {
-      background: #15803d;
-    }
-
-    /* ====== LAYOUT GERAL DO POST ====== */
-    .blog-main {
-      padding: 40px 16px 60px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .blog-wrapper {
-      width: 100%;
-      max-width: 920px;
-      background: #e7f8ef;
-      border-radius: 24px;
-      padding: 48px 40px 48px;
-    }
-
-    /* ====== PARTE DE CIMA (TÍTULO, TEXTO, CITAÇÃO) ====== */
-    .blog-top {
-      text-align: center;
-      margin-bottom: 36px;
-    }
-
-    .blog-date {
-      font-size: 0.78rem;
-      color: #6b7280;
-      margin-bottom: 16px;
-    }
-
-    .blog-tag {
-      font-size: 2.1rem;
-      font-weight: 800;
-      color: #22c55e;
-      margin-bottom: 0;
-    }
-
-    .blog-tag-sub {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #16a34a;
-      margin-bottom: 20px;
-    }
-
-    .blog-info {
-      font-size: 0.85rem;
-      color: #6b7280;
-      margin-bottom: 14px;
-    }
-
-    .blog-info a {
-      color: #16a34a;
-      font-weight: 600;
-      text-decoration: underline;
-    }
-
-    .blog-question {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #16a34a;
-      margin-bottom: 18px;
-    }
-
-    .blog-body {
-      font-size: 0.9rem;
-      line-height: 1.7;
-      color: #374151;
-      max-width: 680px;
-      margin: 0 auto 32px;
-      text-align: left;
-    }
-
-    .blog-body p + p {
-      margin-top: 10px;
-    }
-
-    .blog-quote {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: #16a34a;
-      max-width: 640px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    /* ====== GRÁFICO ====== */
-    .blog-chart {
-      margin: 40px auto 32px;
-      max-width: 680px;
-    }
-
-    .blog-chart-card {
-      background: #ffffff;
-      border-radius: 24px;
-      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.12);
-      padding: 16px 20px;
-    }
-
-    .blog-chart-card img {
-      width: 100%;
-      display: block;
-      border-radius: 16px;
-    }
-
-    /* ====== TEXTO INFERIOR (DUAS COLUNAS) ====== */
-    .blog-bottom {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 32px;
-      max-width: 820px;
-      margin: 8px auto 40px;
-      font-size: 0.9rem;
-      color: #374151;
-    }
-
-    .blog-column h4 {
-      color: #16a34a;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .blog-column p {
-      line-height: 1.6;
-    }
-
-    /* ====== AUTOR ====== */
-    .blog-author {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      max-width: 320px;
-      margin: 0 auto;
-      padding-top: 8px;
-      border-top: 1px solid rgba(148, 163, 184, 0.4);
-    }
-
-    .author-avatar {
-      width: 44px;
-      height: 44px;
-      border-radius: 999px;
-      background: #f97316;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      color: #ffffff;
-      font-size: 1rem;
-    }
-
-    .author-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .author-name {
-      font-weight: 700;
-      color: #16a34a;
-      font-size: 0.95rem;
-    }
-
-    .author-role {
-      font-size: 0.8rem;
-      color: #6b7280;
-    }
-
-    /* ====== FOOTER ====== */
-    footer {
-      text-align: center;
-      padding: 24px 16px 32px;
-      font-size: 0.85rem;
-      color: #6b7280;
-    }
-
-    /* ====== RESPONSIVO ====== */
-    @media (max-width: 768px) {
-      header {
-        padding: 12px 20px;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      .nav-links {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .blog-wrapper {
-        padding: 40px 20px 40px;
-        border-radius: 20px;
-      }
-
-      .blog-bottom {
-        grid-template-columns: 1fr;
-      }
-
-      .blog-quote {
-        font-size: 1.15rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- HEADER (se quiser usar o do site, pode trocar isso depois) -->
-  <header>
-    <div class="logo">MAK Soluções Sustentáveis</div>
-
-    <nav class="nav-links">
-      <a href="/">Início</a>
-      <a href="/blog">Blog</a>
-      <a href="/servicos">Serviços</a>
-      <a href="/sobre">Sobre nós</a>
-      <a href="/contato">Orçamento</a>
-    </nav>
-
-    <button class="btn-contato">Contato</button>
-  </header>
-
-  <main class="blog-main">
-    <article class="blog-wrapper">
-      <!-- TOPO DO POST -->
-      <div class="blog-top">
-        <!-- 🔁 TROCAR DATA AQUI -->
-        <p class="blog-date">11/10/2025</p>
-
-        <!-- 🔁 TÍTULO PRINCIPAL -->
-        <h1 class="blog-tag">Post</h1>
-        <h2 class="blog-tag-sub">da Semana</h2>
-
-        <!-- 🔁 LINK PARA OUTROS POSTS -->
-        <p class="blog-info">
-          Consulte posts de semanas anteriores clicando
-          <a href="#">aqui</a>.
-        </p>
-
-        <!-- 🔁 PERGUNTA / TÍTULO DO TEXTO -->
-        <p class="blog-question">
-          Qual material é mais sustentável para subir uma construção?
-        </p>
-      </div>
-
-      <!-- TEXTO PRINCIPAL -->
-      <div class="blog-body">
-        <!-- 🔁 PARÁGRAFOS DO POST -->
-        <p>
-          Ao escolher o material para erguer uma construção, a decisão vai muito além
-          do custo e da durabilidade. A sustentabilidade estrutural passou a ser um dos
-          pilares da engenharia moderna.
-        </p>
-        <p>
-          Segundo dados da UNEP (2025), o setor de construção representa 18% das
-          emissões globais de CO₂, sendo o cimento responsável por 4–8% desse total.
-          O concreto tradicional, portanto, é o maior vilão — mas novas soluções vêm
-          ganhando força.
-        </p>
-        <p>
-          Entre as alternativas, o cimento LC³ (limestone calcined clay cement) reduz
-          as emissões em até 30%, enquanto a madeira engenheirada pode chegar a 50%
-          menos impacto, com o bônus de armazenar carbono ao longo do tempo.
-        </p>
-      </div>
-
-      <!-- CITAÇÃO -->
-      <p class="blog-quote">
-        “Sustentabilidade não é eliminar materiais, e sim usá-los com inteligência,
-        no lugar e na medida certa”.
+      <p class="blog-info">
+        Consulte posts de semanas anteriores clicando
+        <a href="#">aqui</a>.
       </p>
 
-      <!-- GRÁFICO -->
-      <div class="blog-chart">
-        <div class="blog-chart-card">
-          <!-- 🔁 TROCAR A IMAGEM DO GRÁFICO AQUI -->
-          <img
-            src="https://via.placeholder.com/800x360?text=Gr%C3%A1fico+de+Emiss%C3%B5es"
-            alt="Gráfico comparativo de emissões de CO₂ por material"
-          />
-        </div>
+      <h3 class="blog-title">
+        Qual material é mais sustentável para subir uma construção?
+      </h3>
+
+      <div class="blog-body">
+        <p>
+          Ao escolher o material para erguer uma construção, a decisão vai muito
+          além do custo e da durabilidade. A sustentabilidade estrutural passou
+          a ser um dos principais pilares da engenharia moderna.
+        </p>
+        <br />
+        <p>
+          Segundo dados da UNEP (2025), o setor de construção representa 18% das
+          emissões globais de CO₂, sendo o cimento responsável por 4–5% desse
+          total. O concreto tradicional, portanto, é o maior vilão — mas novas
+          soluções vêm ganhando força.
+        </p>
+        <br />
+        <p>
+          Entre as alternativas, o concreto LC³ (cimento de calcário e argila
+          calcinada) reduz até 40% das emissões em comparação ao cimento comum.
+          Além disso, a madeira engenheirada pode chegar a 50% menos impacto,
+          com o benefício extra de armazenar carbono ao longo do tempo.
+        </p>
       </div>
 
-      <!-- TEXTO INFERIOR (DUAS COLUNAS) -->
-      <div class="blog-bottom">
-        <!-- COLUNA ESQUERDA -->
-        <div class="blog-column">
-          <h4>Conclusão</h4>
-          <p>
-            Nenhum material é perfeito por si só. A escolha sustentável envolve olhar
-            o ciclo de vida completo, desde a extração até o descarte. No cenário
-            atual, a combinação de madeira certificada com concreto de baixo carbono é
-            um dos caminhos mais promissores para construir o futuro de forma mais
-            leve para o planeta.
-          </p>
-        </div>
-
-        <!-- COLUNA DIREITA -->
-        <div class="blog-column">
-          <h4>Um equilíbrio inteligente</h4>
-          <p>
-            A solução híbrida — que combina madeira engenheirada em partes estruturais
-            leves com concreto de baixo carbono — se mostra o caminho mais promissor.
-            Essa abordagem mantém a segurança e resistência das estruturas, ao mesmo
-            tempo que reduz em até 55% as emissões médias.
-          </p>
-        </div>
-      </div>
-
-      <!-- AUTOR -->
-      <div class="blog-author">
-        <!-- 🔁 SE QUISER, PODE TROCAR AS INICIAIS (KG) -->
-        <div class="author-avatar">KG</div>
-
-        <div class="author-info">
-          <!-- 🔁 NOME E CARGO DO AUTOR -->
-          <span class="author-name">Kaique Gelado</span>
-          <span class="author-role">estagiário de engenharia ambiental</span>
-        </div>
-      </div>
+      <p class="blog-quote">
+        “Sustentabilidade não é eliminar materiais, e sim usá-los com
+        inteligência, no lugar e na medida certa”.
+      </p>
     </article>
   </main>
 
   <footer>
     © 2025 MAK Soluções Sustentáveis. Todos os direitos reservados.
   </footer>
-</body>
-</html>
