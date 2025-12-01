@@ -12,8 +12,15 @@ CREATE TABLE post (
   titulo varchar(100) NOT NULL,
   tags varchar(100) NOT NULL,
   autor varchar(100) NOT NULL,
-  data datetime NOT NULL,
+  dia datetime NOT NULL,
   descricao text NOT NULL,
   conteudo mediumtext NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE cadastro (
+  id int NOT NULL AUTO_INCREMENT,
+  nome varchar(100) NOT NULL,
+  telefone varchar(100) NOT NULL,
   PRIMARY KEY (id)
 );
