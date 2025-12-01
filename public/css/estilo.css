@@ -1,3 +1,6 @@
+/* ===========================
+   BASE / RESET
+   =========================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -58,7 +61,7 @@ nav a:hover {
   color: #00a74f;
 }
 
-/* navegação com classe .nav-links (blog, etc.) */
+/* navegação com classe .nav-links (usada no blog que te mandei) */
 .nav-links {
   display: flex;
   gap: 22px;
@@ -180,413 +183,330 @@ section {
 }
 
 /* ===========================
-   BLOG – PÁGINA DE POST DETALHADO
-   (BASEADA NO PRIMEIRO CSS, RENOMEADA)
+   BLOG – PÁGINA DO POST (WIREFRAME)
    =========================== */
 
-/* use <main class="post-main"> na página do post */
-.post-main {
+/* use <main class="blog-main"> na página do blog */
+.blog-main {
   padding: 40px 16px 60px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
-.post-wrapper {
+.blog-card {
   width: 100%;
-  max-width: 920px;
-  background: #e7f8ef;
+  max-width: 900px;
+  background: #e7f8ef; /* bloco verdinho do wireframe */
   border-radius: 24px;
-  padding: 48px 40px 48px;
-}
-
-/* PARTE DE CIMA */
-.post-top {
+  padding: 56px 40px 64px;
   text-align: center;
-  margin-bottom: 36px;
+  margin-top: 16px;
 }
 
-.post-date {
+.blog-date {
   font-size: 0.78rem;
   color: #6b7280;
   margin-bottom: 16px;
 }
 
-.post-tag {
-  font-size: 2.1rem;
+.blog-tag {
+  font-size: 2rem;
   font-weight: 800;
   color: #22c55e;
-  margin-bottom: 0;
+  margin-bottom: 4px;
 }
 
-.post-tag-sub {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #16a34a;
-  margin-bottom: 20px;
-}
-
-.post-info {
-  font-size: 0.85rem;
-  color: #6b7280;
-  margin-bottom: 14px;
-}
-
-.post-info a {
-  color: #16a34a;
-  font-weight: 600;
-  text-decoration: underline;
-}
-
-.post-question {
-  font-size: 1rem;
+.blog-tag-sub {
+  font-size: 1.25rem;
   font-weight: 700;
   color: #16a34a;
   margin-bottom: 18px;
 }
 
-/* TEXTO PRINCIPAL */
-.post-body {
+.blog-info {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.blog-info a {
+  color: #16a34a;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.blog-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  max-width: 520px;
+  margin: 0 auto 12px;
+}
+
+.blog-body {
   font-size: 0.9rem;
   line-height: 1.7;
   color: #374151;
-  max-width: 680px;
+  max-width: 620px;
   margin: 0 auto 32px;
-  text-align: left;
 }
 
-.post-body p + p {
-  margin-top: 10px;
-}
-
-/* CITAÇÃO */
-.post-quote {
+.blog-quote {
   font-size: 1.4rem;
   font-weight: 800;
   color: #16a34a;
   max-width: 640px;
   margin: 0 auto;
-  text-align: center;
-}
-
-/* GRÁFICO */
-.post-chart {
-  margin: 40px auto 32px;
-  max-width: 680px;
-}
-
-.post-chart-card {
-  background: #ffffff;
-  border-radius: 24px;
-  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.12);
-  padding: 16px 20px;
-}
-
-.post-chart-card img {
-  width: 100%;
-  display: block;
-  border-radius: 16px;
-}
-
-/* TEXTO INFERIOR: 2 COLUNAS */
-.post-bottom {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px;
-  max-width: 820px;
-  margin: 8px auto 40px;
-  font-size: 0.9rem;
-  color: #374151;
-}
-
-.post-column h4 {
-  color: #16a34a;
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.post-column p {
-  line-height: 1.6;
-}
-
-/* AUTOR */
-.post-author {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  max-width: 320px;
-  margin: 0 auto;
-  padding-top: 8px;
-  border-top: 1px solid rgba(148, 163, 184, 0.4);
-}
-
-.post-author-avatar {
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  background: #f97316;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 1rem;
-}
-
-.post-author-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.post-author-name {
-  font-weight: 700;
-  color: #16a34a;
-  font-size: 0.95rem;
-}
-
-.post-author-role {
-  font-size: 0.8rem;
-  color: #6b7280;
 }
 
 /* ===========================
-   SOBRE – SEÇÃO MAK
+   SOBRE
    =========================== */
 
+/* ----- SEÇÃO SOBRE A MAK ----- */
+
 .sobre-mak {
-  background-color: #e8f9e8;
-  padding: 80px 80px;
+    background-color: #e8f9e8;      /* verde bem clarinho de fundo */
+    padding: 80px 80px;
 }
 
 .sobre-conteudo {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .sobre-texto {
-  flex: 1;
-  max-width: 480px;
+    flex: 1;
+    max-width: 480px;
 }
 
 .sobre-texto h2 {
-  color: #008037;
-  font-size: 2rem;
-  margin-bottom: 20px;
+    color: #008037;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .sobre-texto h2 span {
-  color: #008037;
-  font-weight: 700;
+    color: #008037;
+    font-weight: 700;
 }
 
 .sobre-texto p {
-  color: #333;
-  line-height: 1.6;
-  margin-bottom: 12px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 12px;
 }
 
 .sobre-metricas {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 24px;
 }
 
 .metrica strong {
-  display: block;
-  font-size: 1.6rem;
-  color: #008037;
+    display: block;
+    font-size: 1.6rem;
+    color: #008037;
 }
 
 .metrica span {
-  font-size: 0.9rem;
-  color: #555;
+    font-size: 0.9rem;
+    color: #555;
 }
 
 /* Imagem e card de missão */
 .sobre-imagem {
-  flex: 1;
-  position: relative;
+    flex: 1;
+    position: relative;
 }
 
 .sobre-imagem img {
-  width: 100%;
-  border-radius: 16px;
-  display: block;
+    width: 100%;
+    border-radius: 16px;
+    display: block;
 }
 
 .sobre-card-missao {
-  position: absolute;
-  bottom: 24px;
-  left: 24px;
-  background: #ffffff;
-  padding: 14px 18px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-  max-width: 260px;
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: #ffffff;
+    padding: 14px 18px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    max-width: 260px;
 }
 
 .sobre-card-missao h4 {
-  margin: 0 0 4px;
-  color: #008037;
-  font-size: 0.95rem;
+    margin: 0 0 4px;
+    color: #008037;
+    font-size: 0.95rem;
 }
 
 .sobre-card-missao p {
-  margin: 0;
-  font-size: 0.85rem;
-  color: #555;
+    margin: 0;
+    font-size: 0.85rem;
+    color: #555;
 }
 
-/* Responsivo sobre */
+/* Responsivo */
 @media (max-width: 900px) {
-  .sobre-mak {
-    padding: 60px 24px;
-  }
+    .sobre-mak {
+        padding: 60px 24px;
+    }
 
-  .sobre-conteudo {
-    flex-direction: column;
-  }
+    .sobre-conteudo {
+        flex-direction: column;
+    }
 
-  .sobre-imagem {
-    margin-top: 32px;
-  }
+    .sobre-imagem {
+        margin-top: 32px;
+    }
 }
+
 
 /* ===========================
-   CONTATO / ORÇAMENTO – ORÇAMENTO SECTION
+   CONTATO / ORÇAMENTO
    =========================== */
 
+/* ---------- SEÇÃO ORÇAMENTO ---------- */
+
+/* SEÇÃO ORÇAMENTO */
 .orcamento-section {
-  text-align: center;
-  padding: 120px 20px;
-  background: #eaf7e8;
+    text-align: center;
+    padding: 120px 20px;
+    background: #eaf7e8;
 }
 
 .subtexto-orcamento {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  color: #444;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #444;
 }
 
 .titulo-orcamento {
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-bottom: 50px;
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 50px;
 }
 
-/* BOTÕES ORÇAMENTO */
+/* BOTÃO AGENDAR */
 .btn-agendar {
-  background: #3d82f6;
-  color: #fff;
-  border: none;
-  padding: 15px 45px;
-  font-size: 1.2rem;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.2s;
+    background: #3d82f6;
+    color: #fff;
+    border: none;
+    padding: 15px 45px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
 .btn-agendar:hover {
-  background: #2563eb;
+    background: #2563eb;
 }
 
+/* OU */
 .texto-ou {
-  font-size: 1.1rem;
-  margin: 35px 0 35px;
-  font-weight: 600;
-  color: #444;
+    font-size: 1.1rem;
+    margin: 35px 0 35px;
+    font-weight: 600;
+    color: #444;
 }
 
+/* BOTÃO CADASTRAR */
 .btn-cadastrar {
-  background: #0d9f43;
-  color: #fff;
-  border: none;
-  padding: 14px 40px;
-  font-size: 1.1rem;
-  border-radius: 10px;
-  cursor: pointer;
+    background: #0d9f43;
+    color: #fff;
+    border: none;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 .btn-cadastrar:hover {
-  background: #0a7b34;
+    background: #0a7b34;
 }
 
+/* LEGENDA */
 .legenda-cadastro {
-  margin-top: 25px;
-  font-size: 0.95rem;
-  color: #444;
+    margin-top: 25px;
+    font-size: 0.95rem;
+    color: #444;
 }
 
 /* POP-UP LATERAL */
 .popup-slide-container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 0;
-  background: rgba(0, 0, 0, 0.35);
-  overflow: hidden;
-  transition: 0.3s ease;
-  z-index: 9999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 0;
+    background: rgba(0,0,0,0.35);
+    overflow: hidden;
+    transition: 0.3s ease;
+    z-index: 9999;
 }
 
 .popup-slide {
-  width: 340px;
-  height: 100%;
-  background: #fff;
-  padding: 30px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.15);
+    width: 340px;
+    height: 100%;
+    background: #fff;
+    padding: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.15);
 }
 
 .popup-slide-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
 }
 
 .popup-close {
-  background: none;
-  border: none;
-  font-size: 22px;
-  cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
 }
 
 .popup-slide label {
-  margin-top: 15px;
-  display: block;
-  font-weight: 600;
+    margin-top: 15px;
+    display: block;
+    font-weight: 600;
 }
 
 .popup-slide input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 6px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
 }
 
 .btn-enviar-popup {
-  margin-top: 25px;
-  width: 100%;
-  padding: 12px;
-  background: #0d9f43;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background: #0d9f43;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .btn-enviar-popup:hover {
-  background: #0a7b34;
+    background: #0a7b34;
 }
+
+
 
 /* ===========================
    FAQ
@@ -627,10 +547,11 @@ section {
 .faq-item {
   background: #f5fdf6;
   border-radius: 999px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
   overflow: hidden;
 }
 
+/* cabeçalho da pergunta */
 .faq-pergunta {
   width: 100%;
   border: none;
@@ -654,13 +575,13 @@ section {
   transition: transform 0.2s ease;
 }
 
+/* corpo da resposta (começa escondido) */
 .faq-resposta {
   max-height: 0;
   overflow: hidden;
   padding: 0 22px;
   background: #f8fff8;
-  transition: max-height 0.25s ease, padding-top 0.2s ease,
-    padding-bottom 0.2s ease;
+  transition: max-height 0.25s ease, padding-top 0.2s ease, padding-bottom 0.2s ease;
 }
 
 .faq-resposta p {
@@ -669,12 +590,13 @@ section {
   padding-bottom: 14px;
 }
 
+/* estado aberto */
 .faq-item.ativo {
   border-radius: 18px;
 }
 
 .faq-item.ativo .faq-resposta {
-  max-height: 200px;
+  max-height: 200px;   /* suficiente para 1–2 parágrafos */
   padding-top: 4px;
 }
 
@@ -682,6 +604,7 @@ section {
   transform: rotate(180deg);
 }
 
+/* CTA final */
 .faq-cta {
   text-align: center;
   margin-top: 20px;
@@ -698,6 +621,7 @@ section {
   font-weight: 600;
 }
 
+/* responsivo */
 @media (max-width: 768px) {
   .faq-section {
     padding: 60px 20px;
@@ -708,9 +632,9 @@ section {
   }
 }
 
-/* ===========================
-   CONTATO / LOCALIZAÇÃO
-   =========================== */
+/* =======================================
+   CONTATE-NOS / LOCALIZAÇÃO – DESENHO COMPLETO
+   ======================================= */
 
 .contato-section {
   background-color: #e8f9e8;
@@ -735,12 +659,14 @@ section {
   font-size: 0.98rem;
 }
 
+/* GRID PRINCIPAL */
 .contato-grid {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   gap: 24px;
 }
 
+/* COLUNAS */
 .contato-esq,
 .contato-dir {
   display: flex;
@@ -748,11 +674,12 @@ section {
   gap: 20px;
 }
 
+/* CARDS */
 .contato-card {
   background: white;
   padding: 26px 26px 22px;
   border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
 
 .contato-card h4 {
@@ -768,6 +695,7 @@ section {
   line-height: 1.4;
 }
 
+/* MAPA BOX */
 .contato-mapa {
   margin-top: 16px;
   background: #eef0ff;
@@ -793,6 +721,7 @@ section {
   color: #6b7280;
 }
 
+/* BOTÃO MAPA */
 .btn-mapa {
   margin-top: 18px;
   width: 100%;
@@ -806,6 +735,7 @@ section {
   cursor: pointer;
 }
 
+/* ITENS COM ÍCONE */
 .contato-item {
   display: flex;
   align-items: flex-start;
@@ -824,6 +754,7 @@ section {
   font-size: 1.2rem;
 }
 
+/* BOTÕES DE CONTATO */
 .contato-botoes {
   display: flex;
   gap: 10px;
@@ -852,6 +783,7 @@ section {
   cursor: pointer;
 }
 
+/* HORÁRIO */
 .contato-horario-linha {
   display: flex;
   justify-content: space-between;
@@ -869,6 +801,7 @@ section {
   font-weight: 600;
 }
 
+/* ALERTA */
 .contato-alerta {
   margin-top: 18px;
   background: #e6f8e6;
@@ -878,6 +811,7 @@ section {
   color: #166534;
 }
 
+/* COMO CHEGAR */
 .contato-comochegar-item {
   display: flex;
   align-items: flex-start;
@@ -896,6 +830,7 @@ section {
   font-size: 1.1rem;
 }
 
+/* RESPONSIVO */
 @media (max-width: 900px) {
   .contato-section {
     padding: 60px 20px;
@@ -906,8 +841,9 @@ section {
   }
 }
 
+
 /* ===========================
-   SERVIÇOS – CARDS
+   SERVIÇOS 
    =========================== */
 
 .servicos-section {
@@ -938,6 +874,8 @@ section {
   font-size: 0.98rem;
   color: #4b5563;
 }
+
+/* Cards */
 
 .servicos-cards {
   display: flex;
@@ -988,6 +926,8 @@ section {
   margin-top: 2px;
 }
 
+/* Responsivo */
+
 @media (max-width: 900px) {
   .servicos-section {
     padding: 60px 20px 70px;
@@ -1002,19 +942,9 @@ section {
   }
 }
 
-/* ===========================
-   FOOTER
-   =========================== */
-
-footer {
-  text-align: center;
-  padding: 24px 16px 32px;
-  font-size: 0.85rem;
-  color: #6b7280;
-}
 
 /* ===========================
-   RESPONSIVO GLOBAL
+   RESPONSIVO
    =========================== */
 
 @media (max-width: 768px) {
@@ -1039,20 +969,18 @@ footer {
     flex-wrap: wrap;
   }
 
-  .post-main {
+  .blog-main {
     padding: 32px 16px 40px;
   }
 
-  .post-wrapper {
-    padding: 40px 20px 40px;
-    border-radius: 20px;
+  .blog-card {
+    padding: 40px 20px 44px;
   }
 
-  .post-bottom {
-    grid-template-columns: 1fr;
-  }
-
-  .post-quote {
-    font-size: 1.15rem;
+  .blog-quote {
+    font-size: 1.2rem;
   }
 }
+
+
+
