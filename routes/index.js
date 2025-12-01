@@ -61,7 +61,7 @@ router.post("/cadastrarOrcamento", wrap(async (req, res) => {
 	];
 
 	await sql.connect(async sql => {
-		await sql.query("insert into cadastro (nome, telefone) values (?, ?)", parametros);
+		lista = await sql.query("insert into cadastro (nome, telefone) values (?, ?)", parametros);
 	});
 
 	res.json(true);
