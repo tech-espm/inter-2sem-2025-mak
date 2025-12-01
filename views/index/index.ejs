@@ -1,4 +1,13 @@
-﻿  <!-- HERO -->
+﻿<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mak Soluções Sustentáveis</title>
+  <link rel="stylesheet" href="/public/css/estilo.css" />
+</head>
+<body>
+
+  <!-- HERO -->
   <section id="inicio" class="hero">
     <div>
       <h1>Soluções Sustentáveis para um Futuro Melhor</h1>
@@ -140,8 +149,11 @@
   </div>
 </section>
 
-  <!-- ORCAMENTO-->
+  
+
+<!-- ORÇAMENTO -->
 <section id="orcamento" class="orcamento-section">
+    
     <p class="subtexto-orcamento">
         Clique abaixo para agendar on-line ou fisicamente no escritório.
     </p>
@@ -163,26 +175,44 @@
     <p class="legenda-cadastro">
         Ao se cadastrar, entraremos em contato em até <strong>24h úteis.</strong>
     </p>
+
 </section>
-<!-- POP-UP LATERAL -->
+
+
+
+<!-- ============================
+     POP-UP LATERAL (SLIDE RIGHT)
+     ============================ -->
 <div id="popup-slide" class="popup-slide-container">
+
   <div class="popup-slide">
-    
+
     <div class="popup-slide-header">
       <h3>Cadastro para Orçamento</h3>
       <button class="popup-close" onclick="fecharPopupSlide()">✕</button>
     </div>
 
     <label>Nome completo</label>
-    <input type="text" id="nomeSlide" placeholder="Insira seu nome completo" />
+    <input type="text" id="nomeSlide" placeholder="Insira seu nome completo">
 
     <label>Celular (WhatsApp)</label>
-    <input type="text" id="celularSlide" placeholder="(11) 99999-9999" />
+    <input type="text" id="celularSlide" placeholder="11999999999">
 
-    <button class="btn-enviar-popup" type="button" onclick="cadastrarOrcamento()">Enviar</button>
+    <!-- Mensagem de retorno -->
+    <p id="mensagemEnvio" class="msg-envio"></p>
+
+    <button class="btn-enviar-popup" onclick="cadastrarOrcamento()">
+        Enviar
+    </button>
+
   </div>
 </div>
 
+
+
+<!-- ============================
+     JAVASCRIPT DO POP-UP + ENVIO
+     ============================ -->
 <script>
 function abrirPopupSlide() {
     document.getElementById("popup-slide").style.width = "100%";
@@ -190,7 +220,12 @@ function abrirPopupSlide() {
 
 function fecharPopupSlide() {
     document.getElementById("popup-slide").style.width = "0";
+
+    const msg = document.getElementById("mensagemEnvio");
+    msg.textContent = "";
+    msg.className = "msg-envio";
 }
+
 </script>
 
 
@@ -458,8 +493,8 @@ function fecharPopupSlide() {
   </div>
 </section>
 
-<script>
-	async function cadastrarOrcamento() {
 
-	}
-</script>
+</body>
+</html>
+
+
