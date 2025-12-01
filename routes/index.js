@@ -31,4 +31,29 @@ router.get("/blog", wrap(async (req, res) => {
 	res.render("index/blog", opcoes);
 }));
 
+router.post("/cadastrarOrcamento", wrap(async (req, res) => {
+	let orcamento = req.body;
+
+	if (!orcamento.nome) {
+		res.status(400).json("Nome inválido");
+		return;
+	}
+
+	if (!orcamento.celular) {
+		res.status(400).json("Celular inválido");
+		return;
+	}
+
+	const parametros = [
+		orcamento.nome,
+		orcamento.celular
+	];
+
+	await sql.connect(async sql => {
+		lista = await sql.query("insert into orcamento (nome, email) values (?, ?)", parametros);
+	});
+
+	res.json(true);
+}));
+
 module.exports = router;
