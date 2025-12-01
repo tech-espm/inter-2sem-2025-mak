@@ -5,18 +5,7 @@ const sql = require("../data/sql");
 const router = express.Router();
 
 router.get("/", wrap(async (req, res) => {
-	let posts;
-
-	await sql.connect(async sql => {
-		posts = await sql.query("select id, titulo, tags, autor, descricao, date_format(dia, '%d/%m/%Y') dia from post order by id desc limit 12");
-	});
-
-	let opcoes = {
-		titulo: "Mak",
-		posts: posts
-	};
-
-	res.render("index/index", opcoes);
+	res.render("index/index");
 }));
 
 router.get("/sobre", wrap(async (req, res) => {
