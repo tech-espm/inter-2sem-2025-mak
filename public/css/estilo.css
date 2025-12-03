@@ -1,10 +1,14 @@
-/* ===========================
+/* =========================== 
    BASE / RESET
    =========================== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+:root {
+  --mak-green-bg: #e8f9e8; /* tom de verde padronizado para as seções */
 }
 
 html {
@@ -106,7 +110,7 @@ section {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #eafaea;
+  background-color: var(--mak-green-bg);
 }
 
 .hero h1 {
@@ -153,7 +157,7 @@ section {
 }
 
 .servico-card {
-  background: #eafaea;
+  background: var(--mak-green-bg);
   border-radius: 12px;
   padding: 20px;
   margin: 20px 0;
@@ -165,7 +169,7 @@ section {
    =========================== */
 
 #blog {
-  background: #f0fff0;
+  background: var(--mak-green-bg);
 }
 
 .post {
@@ -266,105 +270,105 @@ section {
 /* ----- SEÇÃO SOBRE A MAK ----- */
 
 .sobre-mak {
-    background-color: #e8f9e8;      /* verde bem clarinho de fundo */
-    padding: 80px 80px;
+  background-color: var(--mak-green-bg);
+  padding: 80px 80px;
 }
 
 .sobre-conteudo {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .sobre-texto {
-    flex: 1;
-    max-width: 480px;
+  flex: 1;
+  max-width: 480px;
 }
 
 .sobre-texto h2 {
-    color: #008037;
-    font-size: 2rem;
-    margin-bottom: 20px;
+  color: #008037;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .sobre-texto h2 span {
-    color: #008037;
-    font-weight: 700;
+  color: #008037;
+  font-weight: 700;
 }
 
 .sobre-texto p {
-    color: #333;
-    line-height: 1.6;
-    margin-bottom: 12px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 12px;
 }
 
 .sobre-metricas {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-    margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 24px;
 }
 
 .metrica strong {
-    display: block;
-    font-size: 1.6rem;
-    color: #008037;
+  display: block;
+  font-size: 1.6rem;
+  color: #008037;
 }
 
 .metrica span {
-    font-size: 0.9rem;
-    color: #555;
+  font-size: 0.9rem;
+  color: #555;
 }
 
 /* Imagem e card de missão */
 .sobre-imagem {
-    flex: 1;
-    position: relative;
+  flex: 1;
+  position: relative;
 }
 
 .sobre-imagem img {
-    width: 100%;
-    border-radius: 16px;
-    display: block;
+  width: 100%;
+  border-radius: 16px;
+  display: block;
 }
 
 .sobre-card-missao {
-    position: absolute;
-    bottom: 24px;
-    left: 24px;
-    background: #ffffff;
-    padding: 14px 18px;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-    max-width: 260px;
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: #ffffff;
+  padding: 14px 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  max-width: 260px;
 }
 
 .sobre-card-missao h4 {
-    margin: 0 0 4px;
-    color: #008037;
-    font-size: 0.95rem;
+  margin: 0 0 4px;
+  color: #008037;
+  font-size: 0.95rem;
 }
 
 .sobre-card-missao p {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #555;
+  margin: 0;
+  font-size: 0.85rem;
+  color: #555;
 }
 
 /* Responsivo */
 @media (max-width: 900px) {
-    .sobre-mak {
-        padding: 60px 24px;
-    }
+  .sobre-mak {
+    padding: 60px 24px;
+  }
 
-    .sobre-conteudo {
-        flex-direction: column;
-    }
+  .sobre-conteudo {
+    flex-direction: column;
+  }
 
-    .sobre-imagem {
-        margin-top: 32px;
-    }
+  .sobre-imagem {
+    margin-top: 32px;
+  }
 }
 
 
@@ -374,136 +378,135 @@ section {
 
 /* ---------- SEÇÃO ORÇAMENTO ---------- */
 
-/* SEÇÃO ORÇAMENTO */
 .orcamento-section {
-    text-align: center;
-    padding: 120px 20px;
-    background: #eaf7e8;
+  text-align: center;
+  padding: 120px 20px;
+  background: var(--mak-green-bg);
 }
 
 .subtexto-orcamento {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    color: #444;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #444;
 }
 
 .titulo-orcamento {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin-bottom: 50px;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 50px;
 }
 
 /* BOTÃO AGENDAR */
 .btn-agendar {
-    background: #3d82f6;
-    color: #fff;
-    border: none;
-    padding: 15px 45px;
-    font-size: 1.2rem;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.2s;
+  background: #3d82f6;
+  color: #fff;
+  border: none;
+  padding: 15px 45px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 .btn-agendar:hover {
-    background: #2563eb;
+  background: #2563eb;
 }
 
 /* OU */
 .texto-ou {
-    font-size: 1.1rem;
-    margin: 35px 0 35px;
-    font-weight: 600;
-    color: #444;
+  font-size: 1.1rem;
+  margin: 35px 0 35px;
+  font-weight: 600;
+  color: #444;
 }
 
 /* BOTÃO CADASTRAR */
 .btn-cadastrar {
-    background: #0d9f43;
-    color: #fff;
-    border: none;
-    padding: 14px 40px;
-    font-size: 1.1rem;
-    border-radius: 10px;
-    cursor: pointer;
+  background: #0d9f43;
+  color: #fff;
+  border: none;
+  padding: 14px 40px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .btn-cadastrar:hover {
-    background: #0a7b34;
+  background: #0a7b34;
 }
 
 /* LEGENDA */
 .legenda-cadastro {
-    margin-top: 25px;
-    font-size: 0.95rem;
-    color: #444;
+  margin-top: 25px;
+  font-size: 0.95rem;
+  color: #444;
 }
 
 /* POP-UP LATERAL */
 .popup-slide-container {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 0;
-    background: rgba(0,0,0,0.35);
-    overflow: hidden;
-    transition: 0.3s ease;
-    z-index: 9999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 0;
+  background: rgba(0,0,0,0.35);
+  overflow: hidden;
+  transition: 0.3s ease;
+  z-index: 9999;
 }
 
 .popup-slide {
-    width: 340px;
-    height: 100%;
-    background: #fff;
-    padding: 30px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.15);
+  width: 340px;
+  height: 100%;
+  background: #fff;
+  padding: 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.15);
 }
 
 .popup-slide-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
 }
 
 .popup-close {
-    background: none;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
 }
 
 .popup-slide label {
-    margin-top: 15px;
-    display: block;
-    font-weight: 600;
+  margin-top: 15px;
+  display: block;
+  font-weight: 600;
 }
 
 .popup-slide input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 .btn-enviar-popup {
-    margin-top: 25px;
-    width: 100%;
-    padding: 12px;
-    background: #0d9f43;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  background: #0d9f43;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .btn-enviar-popup:hover {
-    background: #0a7b34;
+  background: #0a7b34;
 }
 
 
@@ -512,7 +515,7 @@ section {
    FAQ
    =========================== */
 .faq-section {
-  background: #e8f9e8;
+  background: var(--mak-green-bg);
 }
 
 .faq-subtitulo {
@@ -585,7 +588,7 @@ section {
    ======================================= */
 
 .contato-section {
-  background-color: #e8f9e8;
+  background-color: var(--mak-green-bg);
   padding: 80px 80px;
 }
 
@@ -795,7 +798,7 @@ section {
    =========================== */
 
 .servicos-section {
-  background-color: #e8f9e8;
+  background-color: var(--mak-green-bg);
   padding: 80px 80px 90px;
 }
 
@@ -929,6 +932,3 @@ section {
     font-size: 1.2rem;
   }
 }
-
-
-
