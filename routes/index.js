@@ -20,7 +20,7 @@ router.get("/blog", wrap(async (req, res) => {
 	let lista;
 
 	await sql.connect(async sql => {
-		lista = await sql.query("select id, titulo, tags, autor, date_format(data, '%d/%m/%Y') data from post order by id desc limit 12");
+		lista = await sql.query("select id, titulo, tags, autor, date_format(dia, '%d/%m/%Y') data from post order by id desc limit 12");
 	});
 
 	let opcoes = {
@@ -50,7 +50,7 @@ router.post("/cadastrarOrcamento", wrap(async (req, res) => {
 	];
 
 	await sql.connect(async sql => {
-		lista = await sql.query("insert into orcamento (nome, email) values (?, ?)", parametros);
+		lista = await sql.query("insert into cadastro (nome, telefone) values (?, ?)", parametros);
 	});
 
 	res.json(true);
