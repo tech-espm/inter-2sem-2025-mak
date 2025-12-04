@@ -32,7 +32,7 @@ router.get("/blog", wrap(async (req, res) => {
 }));
 
 router.post("/cadastrarOrcamento", wrap(async (req, res) => {
-	let orcamento = req.body;
+	const orcamento = req.body;
 
 	if (!orcamento.nome) {
 		res.status(400).json("Nome inválido");
@@ -50,10 +50,14 @@ router.post("/cadastrarOrcamento", wrap(async (req, res) => {
 	];
 
 	await sql.connect(async sql => {
-		lista = await sql.query("insert into cadastro (nome, telefone) values (?, ?)", parametros);
+		await sql.query(
+			"insert into cadastro (nome, telefone) values (?, ?)",
+			parametros
+		);
 	});
 
 	res.json(true);
 }));
 
 module.exports = router;
+

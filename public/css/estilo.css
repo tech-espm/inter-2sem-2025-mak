@@ -60,6 +60,12 @@ nav a {
   margin: 0 15px;
   font-weight: 500;
 }
+/* rodapé */
+.rodape {
+  background-color: #ffffff !important;
+  padding: 30px 20px;
+  text-align: center;
+}
 
 nav a:hover {
   color: #00a74f;
@@ -147,6 +153,106 @@ section {
   border-radius: 8px;
   cursor: pointer;
 }
+
+.btn-solicitar-orcamento {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #00a74f, #16a34a);
+  color: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4);
+  transform: translateY(0);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  animation: pulse-orcamento 2.4s infinite;
+  white-space: nowrap;
+}
+
+/* Botão de serviços usando o mesmo estilo */
+/* Botão Serviços – fundo branco, borda verde, animação suave */
+.btn-servicos {
+  position: relative;
+  overflow: hidden;
+  background: white;
+  color: #00a74f;
+  border: 2px solid #00a74f;
+  padding: 10px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.2s;
+  animation: pulse-servicos 2.6s infinite;
+}
+
+/* Animação suave do botão Serviços */
+@keyframes pulse-servicos {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 167, 79, 0.35);
+  }
+  60% {
+    box-shadow: 0 0 0 12px rgba(0, 167, 79, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 167, 79, 0);
+  }
+}
+
+/* Efeito hover: botão sobe levemente e borda fica mais forte */
+.btn-servicos:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(0, 167, 79, 0.28);
+  background: #f6fff6; /* leve verde quase branco */
+}
+
+
+
+/* Efeito de brilho passando no botão */
+.btn-solicitar-orcamento::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  transition: transform 0.5s ease;
+}
+
+/* Ao passar o mouse, o botão “salta” levemente */
+.btn-solicitar-orcamento:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(22, 163, 74, 0.35);
+}
+
+/* Aciona o brilho ao hover */
+.btn-solicitar-orcamento:hover::before {
+  transform: translateX(320%);
+}
+
+/* Animação de “pulsar” suave para chamar atenção */
+@keyframes pulse-orcamento {
+  0% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.45);
+  }
+  60% {
+    box-shadow: 0 0 0 14px rgba(22, 163, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
+  }
+}
+
 
 /* ===========================
    SERVIÇOS (LISTA SIMPLES)
@@ -931,4 +1037,18 @@ section {
   .blog-quote {
     font-size: 1.2rem;
   }
+}
+
+.msg-envio {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.msg-envio.sucesso {
+  color: #16a34a;
+}
+
+.msg-envio.erro {
+  color: #b91c1c;
 }
