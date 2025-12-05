@@ -89,65 +89,17 @@
     <!-- Área com scroll usando Bootstrap -->
     <div class="overflow-auto p-2" style="max-height: 60vh;">
 
+      <% for (let i = 0; i < posts.length; i++) { %>
       <!-- POST 1 -->
-      <div class="card shadow-sm mb-4 border-0">
+      <div class="card shadow-sm mb-4 border-0" onclick="exibirPost('<%= posts[i].id %>')" style="cursor: pointer;">
         <div class="card-body">
-          <h5 class="card-title">Energia solar: o futuro da sustentabilidade</h5>
+          <h5 class="card-title"><%= posts[i].titulo %></h5>
           <p class="card-text">
-            Descubra como os painéis solares estão revolucionando a forma como o mundo consome energia limpa.
+            <%= posts[i].descricao %>
           </p>
         </div>
       </div>
-
-      <!-- POST 2 -->
-      <div class="card shadow-sm mb-4 border-0">
-        <div class="card-body">
-          <h5 class="card-title">Cidades inteligentes e energia verde</h5>
-          <p class="card-text">
-            As metrópoles do futuro já estão surgindo — saiba como a tecnologia e o meio ambiente podem coexistir.
-          </p>
-        </div>
-      </div>
-
-      <!-- POST 3 -->
-      <div class="card shadow-sm mb-4 border-0">
-        <div class="card-body">
-          <h5 class="card-title">Energia eólica para pequenas empresas</h5>
-          <p class="card-text">
-            Pequenos negócios também podem se beneficiar da energia do vento e reduzir seus custos operacionais.
-          </p>
-        </div>
-      </div>
-
-      <!-- POST 4 -->
-      <div class="card shadow-sm mb-4 border-0">
-        <div class="card-body">
-          <h5 class="card-title">Gestão de resíduos na construção civil</h5>
-          <p class="card-text">
-            Boas práticas de descarte e reciclagem de entulho são essenciais em obras sustentáveis.
-          </p>
-        </div>
-      </div>
-
-      <!-- POST 5 -->
-      <div class="card shadow-sm mb-4 border-0">
-        <div class="card-body">
-          <h5 class="card-title">O que é uma construção verde?</h5>
-          <p class="card-text">
-            Entenda os princípios de eficiência energética, conforto térmico e uso racional de recursos.
-          </p>
-        </div>
-      </div>
-
-      <!-- POST 6 -->
-      <div class="card shadow-sm mb-4 border-0">
-        <div class="card-body">
-          <h5 class="card-title">Como adaptar projetos para energia solar</h5>
-          <p class="card-text">
-            Dicas para arquitetos e engenheiros que querem incorporar painéis fotovoltaicos em novos projetos.
-          </p>
-        </div>
-      </div>
+      <% } %>
 
     </div>
   </div>
@@ -598,4 +550,58 @@ function fecharPopupSlide() {
   </div>
 </section>
 
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="tituloModal"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+      </div>
+      <div class="modal-body" id="corpoModal"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<script>
+  let modal = new bootstrap.Modal(document.getElementById("modal"), {
+    keyboard: false
+  });
+
+  async function exibirPost(id) {
+    try {
+      let response = await fetch("/post?id=" + id);
+
+      if (!response.ok) {
+        alert("Erro ao exibir o post");
+        return;
+      }
+
+      let post = await response.json();
+
+      let html = `
+        <h2>
+          ${post.autor}
+        </h2>
+        <p>
+          <b>${post.dia}</b>
+          <small>${post.tags}</small>
+        </p>
+        <div>
+          ${post.conteudo}
+        </div>
+      `;
+
+      let corpoModal = document.getElementById("corpoModal");
+      corpoModal.innerHTML = html;
+
+      let tituloModal = document.getElementById("tituloModal");
+      tituloModal.innerHTML = post.titulo;
+      modal.show();
+    } catch (ex) {
+      alert("Erro ao exibir o post");
+    }
+  }
+</script>

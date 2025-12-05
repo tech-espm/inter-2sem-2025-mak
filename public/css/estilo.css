@@ -117,6 +117,11 @@ section {
   justify-content: space-around;
   align-items: center;
   background-color: var(--mak-green-bg);
+  background-position: center top;
+  background-size: cover;
+  background-image: url('/public/img/hero.jpeg');
+  min-height: 60vh;
+  margin-top: 80px;
 }
 
 .hero h1 {

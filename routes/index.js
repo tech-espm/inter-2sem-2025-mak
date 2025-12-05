@@ -5,7 +5,33 @@ const sql = require("../data/sql");
 const router = express.Router();
 
 router.get("/", wrap(async (req, res) => {
-	res.render("index/index");
+	let lista;
+
+	await sql.connect(async sql => {
+		lista = await sql.query("select id, titulo, descricao from post order by id desc limit 10");
+	});
+
+	let opcoes = {
+		posts: lista
+	};
+
+	res.render("index/index", opcoes);
+}));
+
+router.get("/post", wrap(async (req, res) => {
+	let lista;
+
+	let id = req.query["id"];
+
+	await sql.connect(async sql => {
+		lista = await sql.query("select id, titulo, descricao, conteudo, tags, autor, date_format(dia, '%d/%m/%y') dia from post where id = ?", [id]);
+	});
+
+	if (lista.length) {
+		res.json(lista[0]);
+	} else {
+		res.status(404).json("Post não encontrado");
+	}
 }));
 
 router.get("/sobre", wrap(async (req, res) => {

@@ -120,7 +120,7 @@ app.use("/", require("./routes/index"));
 app.use((err, req, res, next) => {
 	res.status(err.status || 500);
 
-	res.render("erro", { mensagem: err.message });
+	res.json({ mensagem: err.message });
 });
 
 sql.init({
