@@ -166,10 +166,6 @@ section {
   font-weight: 700;
   font-size: 0.95rem;
   box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.4);
-  transform: translateY(0);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-  animation: pulse-orcamento 2.4s infinite;
-  white-space: nowrap;
 }
 
 /* Botão de serviços usando o mesmo estilo */
@@ -185,8 +181,6 @@ section {
   cursor: pointer;
   font-weight: 700;
   font-size: 0.95rem;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.2s;
-  animation: pulse-servicos 2.6s infinite;
 }
 
 /* Animação suave do botão Serviços */
@@ -291,6 +285,46 @@ section {
   border-radius: 10px;
   margin-bottom: 10px;
 }
+
+/* Seção do blog com espaço definido */
+.blog-section {
+  background: var(--mak-green-bg);
+  padding: 80px 80px;
+}
+
+/* Container com scroll interno */
+.blog-list {
+  max-height: 420px;         /* altura fixa da área de posts (ajusta se quiser) */
+  overflow-y: auto;          /* ativa scroll vertical */
+  padding-right: 8px;        /* espaço pro scrollbar não colar no conteúdo */
+}
+
+/* Scrollbar mais bonitinho (Chrome/Edge) */
+.blog-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.blog-list::-webkit-scrollbar-track {
+  background: #e5f6e5;
+  border-radius: 999px;
+}
+
+.blog-list::-webkit-scrollbar-thumb {
+  background: #00a74f;
+  border-radius: 999px;
+}
+
+/* Em telas menores, aumenta um pouco a área para facilitar leitura */
+@media (max-width: 768px) {
+  .blog-section {
+    padding: 60px 20px;
+  }
+
+  .blog-list {
+    max-height: 500px;
+  }
+}
+
 
 /* ===========================
    BLOG – PÁGINA DO POST (WIREFRAME)
