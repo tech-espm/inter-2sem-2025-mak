@@ -82,29 +82,132 @@
 
   <!-- BLOG -->
 <section id="blog" class="py-5" style="background: var(--mak-green-bg);">
-  <div class="container">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+  <h2 class="mb-0">Nosso Blog 🌱</h2>
 
-    <h2 class="mb-4">Nosso Blog 🌱</h2>
+  <!-- Botão abre o modal -->
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalNovoPost">
+     Novo Post
+    </button>
+  </div>
 
-    <!-- Área com scroll usando Bootstrap -->
-    <div class="overflow-auto p-2" style="max-height: 60vh;">
+<!-- MODAL: Novo Post -->
+  <div class="modal fade" id="modalNovoPost" tabindex="-1" aria-labelledby="modalNovoPostLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
 
-      <% for (let i = 0; i < posts.length; i++) { %>
-      <!-- POST 1 -->
-      <div class="card shadow-sm mb-4 border-0" onclick="exibirPost('<%= posts[i].id %>')" style="cursor: pointer;">
-        <div class="card-body">
-          <h5 class="card-title"><%= posts[i].titulo %></h5>
-          <p class="card-text">
-            <%= posts[i].descricao %>
-          </p>
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalNovoPostLabel">Criar novo post</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
         </div>
-      </div>
-      <% } %>
 
+        <div class="modal-body">
+
+          <div class="row g-3">
+            <div class="col-md-8">
+              <label class="form-label" for="postTitulo">Título</label>
+              <input id="postTitulo" type="text" class="form-control" placeholder="Ex: Energia solar: vale a pena?" />
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-label" for="postTags">Tags</label>
+              <input id="postTags" type="text" class="form-control" placeholder="Ex: solar, energia" />
+            </div>
+
+            <div class="col-md-6">
+              <label class="form-label" for="postAutor">Autor</label>
+              <input id="postAutor" type="text" class="form-control" placeholder="Ex: Equipe MAK" />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="postDia">Data (dia)</label>
+              <input id="postDia" type="date" class="form-control" />
+              <div class="form-text">Se não preencher, será usado o dia de hoje.</div>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label" for="postDescricao">Descrição curta</label>
+              <textarea id="postDescricao" class="form-control" rows="2" placeholder="Resumo do post..."></textarea>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label" for="postConteudo">Conteúdo</label>
+              <textarea id="postConteudo" class="form-control" rows="6" placeholder="Texto completo do post..."></textarea>
+            </div>
+          </div>
+
+        <div id="postMsg" class="mt-3 small"></div>
+
+      </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-success" onclick="criarPostBlog()">Publicar</button>
+        </div>
+
+      </div>
     </div>
   </div>
-</section>
 
+  <% for (let i = 0; i < posts.length; i++) { const post = posts[i]; %>
+    <div class="card mb-3" style="cursor: pointer;" onclick="exibirPost('<%=post.id%>')">
+      <div class="card-body">
+        <h5 class="card-title"><%=post.titulo%></h5>
+        <p class="card-text"><%=post.descricao%></p>
+      </div>
+    </div>
+  <% } %>
+</section>
+<script>
+  function criarPostBlog() {
+    const titulo = document.getElementById("postTitulo").value.trim();
+    const tags = document.getElementById("postTags").value.trim();
+    const autor = document.getElementById("postAutor").value.trim();
+    const dia = document.getElementById("postDia").value;
+    const descricao = document.getElementById("postDescricao").value.trim();
+    const conteudo = document.getElementById("postConteudo").value.trim();
+    const msgDiv = document.getElementById("postMsg");
+
+    if (!titulo || !tags || !autor || !descricao || !conteudo) {
+      msgDiv.textContent = "Por favor, preencha todos os campos obrigatórios.";
+      msgDiv.className = "text-danger";
+      return;
+    }
+
+    const postData = {
+      titulo,
+      tags,
+      autor,
+      dia: dia || new Date().toISOString().split('T')[0],
+      descricao,
+      conteudo
+    };
+
+    fetch("/criarPost", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(postData)
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Erro ao criar o post.");
+      }
+      return response.json();
+    })
+    .then(data => {
+      msgDiv.textContent = "Post criado com sucesso!";
+      msgDiv.className = "text-success";
+      setTimeout(() => {
+        location.reload();
+      }, 1500);
+    })
+    .catch(error => {
+      msgDiv.textContent = error.message;
+      msgDiv.className = "text-danger";
+    });
+  }
+</script>
 
 
   <section id="servicos" class="servicos-section">

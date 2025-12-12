@@ -85,5 +85,58 @@ router.post("/cadastrarOrcamento", wrap(async (req, res) => {
 	res.json(true);
 }));
 
+router.post("/criarPost", wrap(async (req, res) => {
+	const post = req.body;
+
+	if (!post.titulo) {
+		res.status(400).json("Título inválido");
+		return;
+	}
+
+	if (!post.tags) {
+		res.status(400).json("Tags inválidas");
+		return;
+	}
+
+	if (!post.autor) {
+		res.status(400).json("Autor inválido");
+		return;
+	}
+
+	if (!post.dia) {
+		res.status(400).json("Dia inválido");
+		return;
+	}
+
+	if (!post.descricao) {
+		res.status(400).json("Descrição inválida");
+		return;
+	}
+
+	if (!post.conteudo) {
+		res.status(400).json("Conteúdo inválido");
+		return;
+	}
+
+	const parametros = [
+		post.titulo,
+		post.tags,
+		post.autor,
+		post.dia,
+		post.descricao,
+		post.conteudo
+	];
+
+	await sql.connect(async sql => {
+		await sql.query(
+			"insert into post (titulo, tags, autor, dia, descricao, conteudo) values (?, ?, ?, ?, ?, ?)",
+			parametros
+		);
+	});
+
+	res.json(true);
+}));
+
 module.exports = router;
+
 
